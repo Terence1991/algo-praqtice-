@@ -7,20 +7,21 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {
-    const reversed = str.split('').reverse().join('')
-
-    //boolean statment that will return true or false depending on 
-    return reversed === str;
-}
 
 module.exports = palindrome;
 
-// solution 1
-function palindrome(str) {
-    const reversed = str.split('').reverse().join('')
+// // solution 1
+// function palindrome(str) {
+//     const reversed = str.split('').reverse().join('')
 
-    //boolean statment that will return true or false depending on 
-    return reversed === str;
-}
+//     //boolean statment that will return true or false depending on 
+//     return reversed === str;
+// }
 
+// return result of function to get boolean value. The index part takes length of array and slices of 0
+// function palindrome(str) {
+//     return str.split('').every((char, i) => {
+//          return char === str[str.length - i - 1]
+//      })
+//  }
+ 
