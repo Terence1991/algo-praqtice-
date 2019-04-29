@@ -8,14 +8,29 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
-    const words = [];
-    str.split(' ').forEach((word) => {
-        //slice everything after first index.
-        //Split by space to get words rather than individual characters
-      words.push(toUpperCase(word[0]) + word.slice(1))
-    })
-    // dont forget to  returned joined as you split them
-   return words.join(' ')
+    const result = str[0].toUpperCase()
+    // initialize counter at 1 so it doesent count first letter 
+    for (let i = 1; i < str.length; i++) {
+        // how to look let on a loop
+        if (str[i - 1] === ' ') {
+         result += str[i].toUpperCase()
+        }
+    }
+    return result
 }
 
+
+
+
+
+// function capitalize(str) {
+//     const words = [];
+//     str.split(' ').forEach((word) => {
+//         //slice everything after first index.
+//         //Split by space to get words rather than individual characters
+//       words.push(toUpperCase(word[0]) + word.slice(1))
+//     })
+//     // dont forget to  returned joined as you split them
+//    return words.join(' ')
+// }
 module.exports = capitalize;
