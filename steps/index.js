@@ -17,6 +17,55 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+// recursive solution
+function steps(n, row = 0, stair = '') {
+    //base case one when it 
+    //will break out of function
+    //when it is called
+    if (n === row) {
+        return;
+    }
+
+    // string is empy so its fine 
+    // this gets triggered last. Keeps going 
+    if (n === stair.length) {
+        console.log(stair)
+       return steps(n, row + 1)
+    }
+
+    if(stair.length <= row) {
+        //this trigger the else clause
+        // adds space to row and call function again 
+        // once this happen the base case are not relevant
+        // adds aditional space. "#__"  current state. 
+        //One the length of stair equal paramter call it will run again 
+        stair += '#'
+    } else {
+        stair += ' '
+    }
+    steps(n, row, stair)
+}
+
+
+// function steps(n) {
+
+//     //process intire row 
+//     for (let row = 0; row < n; row++) {
+//         // make sure it is let cause let is mutable
+//         let stair = ''
+//         //nested for loop to inersect both row and column
+//         for (let column = 0; column < n; row++) {
+//             if(column <= row) {
+//                 stair += "#"
+//             } else {
+//                 stair += ' '  
+//             }
+//         }
+//         //console.log in for loop because you want 
+//         // it to run in cunjunction with forloop
+//         console.log(stair)
+//     }
+// }
+
 
 module.exports = steps;
