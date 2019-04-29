@@ -36,9 +36,7 @@ function steps(n, row = 0, stair = '') {
     if(stair.length <= row) {
         //this trigger the else clause
         // adds space to row and call function again 
-        // once this happen the base case are not relevant
-        // adds aditional space. "#__"  current state. 
-        //One the length of stair equal paramter call it will run again 
+        //Once the length of stair equal paramter call it will run again 
         stair += '#'
     } else {
         stair += ' '
@@ -69,3 +67,23 @@ function steps(n, row = 0, stair = '') {
 
 
 module.exports = steps;
+
+function pryamid() {
+    const midPoint = Math.floor((2 * n - 1) / 2);
+   
+    for (let row = 0; row < n; row++) {
+        let level = ""
+        
+        for(let column = 0; column < 2 * n -1; column++) {
+            if(midPoint - row <=  column && midPoint + row >= column) {
+                level += '#'
+            } else {
+                level += ' '
+            }
+        }
+        // make sure to be inside of forloop so it runs/ not return statment wil fuck it uo
+        console.log(level)
+    }
+}
+
+console.log(pryamid(3))
