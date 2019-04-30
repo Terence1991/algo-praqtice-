@@ -8,15 +8,23 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-    let counter = 0;
-    let checker = ['a', 'e', 'i', 'o', 'u']
-    str.toLowerCase().split('').forEach(element => {
-       if(checker.includes(element)) {
-           counter++
-       }         
-    });
-
-    return counter
+  const matches = str.match(/[aeiou]/gi)
+  
+  return matches ? matches.length : 0
 }
 
 module.exports = vowels;
+
+
+// basic solution 
+// function vowels(str) {
+//     let counter = 0;
+//     let checker = ['a', 'e', 'i', 'o', 'u']
+//     str.toLowerCase().split('').forEach(element => {
+//        if(checker.includes(element)) {
+//            counter++
+//        }         
+//     });
+
+//     return counter
+// }

@@ -15,6 +15,56 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-function matrix(n) {}
+function matrix(n) {
+    const results = [[]]
+
+    //iterate through results for amount
+    // of n push an empty subarray 
+    for (let i = 0; i < n; i++) {
+        results.push([])
+    }
+
+    //end interdependent on the value of n
+    // the last index you should consider.
+    let counter = 1;
+    let startColumn = 0;
+    let endColumn = n - 1;
+    let startRow = 0;
+    let endRow = n - 1;
+
+    while(startColumn <= endColumn && startRow <= endRow) {
+        // top row
+        for (let i = startColumn; i < endColumn; i++) {
+            results[startRow][i] = counter;
+            counter++
+        }
+        
+        startRow++
+
+        // right column 
+        for (let i = startRow; i < endRow; i++) {
+            results[i][endColumn] = counter;
+            counter++; 
+        }
+
+        endColumn--;
+
+        // bottom row/ loop that decrememnts 
+        for (let i = endColumn; i >= startColumn; i--) {
+            result[endRow][i] = counter;
+            counter++;  
+        }
+        endRow--;
+
+        for(let i = endRow; i >= startRow; i--) {
+            results[endColumn][i] = counter;
+            counter++;
+        }
+
+        endColumn--;
+    } 
+
+    return results;
+}
 
 module.exports = matrix;
