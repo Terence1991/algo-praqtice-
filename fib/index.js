@@ -9,7 +9,34 @@
 //   fib(4) === 3
 
 //recursive problem 
-function fib(n) {
+// how to improve runtime of fib if int asks?
+// memoization: store the arguments of each 
+// function call along with the result.
+// if the the function is called again
+// with the same arguments return the pre 
+// computed results rather than running the 
+// function again. 
+
+function memoize(fn) {
+    const cache = {}
+    //make sure can recieve multiple arguments
+
+    return function(...args) {
+        //if something exists in 
+        // cache object return it 
+        if(cache[args]) {
+            return cache[args]
+        }
+
+        const result = fn.apply(this, args)
+        cache[args] = result
+        return result;
+    }
+
+}
+
+
+function slowFib(n) {
     if(n < 2) {
         return n
     }
@@ -18,6 +45,7 @@ function fib(n) {
 }
 
 module.exports = fib;
+
 
 
 // function fib(n) {
