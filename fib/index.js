@@ -8,17 +8,27 @@
 // Example:
 //   fib(4) === 3
 
+//recursive problem 
 function fib(n) {
-    // allways initilize counter for start
-
-    let fibArray = [0, 1]
-
-    for(let i = n; i <= n; i++) {
-        const a = fibArray[i - 2]
-        const b = fibArray[i- 1]
-        fibArray.push(a + b);
+    if(n < 2) {
+        return n
     }
-    return fibArray[n];
+
+    return fib(n - 1) + fib(n - 2);
 }
 
 module.exports = fib;
+
+
+// function fib(n) {
+//     // allways initilize counter for start
+
+//     let fibArray = [0, 1]
+
+//     for(let i = n; i <= n; i++) {
+//         const a = fibArray[i - 2]
+//         const b = fibArray[i- 1]
+//         fibArray.push(a + b);
+//     }
+//     return fibArray[n];
+// }
